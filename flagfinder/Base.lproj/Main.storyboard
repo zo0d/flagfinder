@@ -1,7 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="13122.16" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="xLV-ag-1Cw">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13104.12"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -9,16 +13,75 @@
         <!--View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="ViewController" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="flagfinder" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGC-Kp-yWN">
+                                <rect key="frame" x="107" y="118" width="200" height="100"/>
+                                <state key="normal" image="spain"/>
+                                <connections>
+                                    <action selector="touchFlag:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4gX-A3-hwb"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4V-vA-0Pq">
+                                <rect key="frame" x="107" y="378" width="200" height="100"/>
+                                <state key="normal" image="spain"/>
+                                <connections>
+                                    <action selector="touchFlag:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mxd-jT-AlB"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTP-ix-q66">
+                                <rect key="frame" x="107" y="248" width="200" height="100"/>
+                                <state key="normal" image="spain"/>
+                                <connections>
+                                    <action selector="touchFlag:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wva-VB-vUk"/>
+                                </connections>
+                            </button>
+                        </subviews>
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bGC-Kp-yWN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="2Fn-A6-nV6"/>
+                            <constraint firstItem="M4V-vA-0Pq" firstAttribute="centerX" secondItem="ZTP-ix-q66" secondAttribute="centerX" id="8gk-Zt-XM3"/>
+                            <constraint firstItem="bGC-Kp-yWN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Hic-CO-iaa"/>
+                            <constraint firstItem="ZTP-ix-q66" firstAttribute="centerX" secondItem="bGC-Kp-yWN" secondAttribute="centerX" id="PTF-7x-jwj"/>
+                            <constraint firstItem="M4V-vA-0Pq" firstAttribute="top" secondItem="ZTP-ix-q66" secondAttribute="bottom" constant="30" id="rdO-UA-JJG"/>
+                            <constraint firstItem="ZTP-ix-q66" firstAttribute="top" secondItem="bGC-Kp-yWN" secondAttribute="bottom" constant="30" id="z8r-Nx-Abc"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <navigationItem key="navigationItem" id="HIi-M7-qO3"/>
+                    <connections>
+                        <outlet property="flag1" destination="bGC-Kp-yWN" id="Cch-cS-gaX"/>
+                        <outlet property="flag2" destination="ZTP-ix-q66" id="LTj-Zs-V3v"/>
+                        <outlet property="flag3" destination="M4V-vA-0Pq" id="hlj-Jq-a48"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
+            <point key="canvasLocation" x="1055.072463768116" y="124.55357142857142"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="EFe-S8-7qw">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="xLV-ag-1Cw" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="2LI-Y2-q6r">
+                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="Zfm-UM-C8q"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="y4j-nF-SyG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="147.82608695652175" y="769.41964285714278"/>
         </scene>
     </scenes>
+    <resources>
+        <image name="spain" width="200" height="100"/>
+    </resources>
 </document>
