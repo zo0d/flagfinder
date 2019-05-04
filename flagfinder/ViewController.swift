@@ -26,6 +26,9 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         
+        navigationItem.rightBarButtonItem = UIBarButtonItem(barButtonSystemItem: .action
+            , target: self, action: #selector(alertScore))
+        
         flag1.layer.borderWidth = 1
         flag2.layer.borderWidth = 1
         flag3.layer.borderWidth = 1
@@ -54,6 +57,12 @@ class ViewController: UIViewController {
         correctFlag = Int.random(in: 0...2)
         
         title = "SCORE: \(score) - CHOOSE: \(countries[correctFlag].uppercased())"
+    }
+    
+    @objc func alertScore() {
+        let ac = UIAlertController(title: "", message: "Your score is \(score).", preferredStyle: .alert)
+        ac.addAction(UIAlertAction(title: "Continue", style: .default))
+        present(ac, animated: true)
     }
     
     @IBAction func touchFlag(_ sender: UIButton) {
