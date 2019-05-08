@@ -20,6 +20,9 @@
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bGC-Kp-yWN">
                                 <rect key="frame" x="107" y="118" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="bGC-Kp-yWN" secondAttribute="height" multiplier="2:1" id="Ppl-bF-7Jx"/>
+                                </constraints>
                                 <state key="normal" image="spain"/>
                                 <connections>
                                     <action selector="touchFlag:" destination="BYZ-38-t0r" eventType="touchUpInside" id="4gX-A3-hwb"/>
@@ -27,6 +30,9 @@
                             </button>
                             <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="M4V-vA-0Pq">
                                 <rect key="frame" x="107" y="378" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="M4V-vA-0Pq" secondAttribute="height" multiplier="2:1" id="e8H-KF-qBO"/>
+                                </constraints>
                                 <state key="normal" image="spain"/>
                                 <connections>
                                     <action selector="touchFlag:" destination="BYZ-38-t0r" eventType="touchUpInside" id="mxd-jT-AlB"/>
@@ -34,6 +40,9 @@
                             </button>
                             <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZTP-ix-q66">
                                 <rect key="frame" x="107" y="248" width="200" height="100"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="ZTP-ix-q66" secondAttribute="height" multiplier="2:1" id="6Wb-Tg-QZA"/>
+                                </constraints>
                                 <state key="normal" image="spain"/>
                                 <connections>
                                     <action selector="touchFlag:" destination="BYZ-38-t0r" eventType="touchUpInside" id="wva-VB-vUk"/>
@@ -43,9 +52,12 @@
                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="bGC-Kp-yWN" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="30" id="2Fn-A6-nV6"/>
+                            <constraint firstItem="M4V-vA-0Pq" firstAttribute="height" secondItem="ZTP-ix-q66" secondAttribute="height" id="2Gs-Jk-37Z"/>
                             <constraint firstItem="M4V-vA-0Pq" firstAttribute="centerX" secondItem="ZTP-ix-q66" secondAttribute="centerX" id="8gk-Zt-XM3"/>
                             <constraint firstItem="bGC-Kp-yWN" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="Hic-CO-iaa"/>
                             <constraint firstItem="ZTP-ix-q66" firstAttribute="centerX" secondItem="bGC-Kp-yWN" secondAttribute="centerX" id="PTF-7x-jwj"/>
+                            <constraint firstItem="ZTP-ix-q66" firstAttribute="height" secondItem="bGC-Kp-yWN" secondAttribute="height" id="hhc-2D-b5S"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" relation="greaterThanOrEqual" secondItem="M4V-vA-0Pq" secondAttribute="bottom" constant="20" id="pQW-0r-YjC"/>
                             <constraint firstItem="M4V-vA-0Pq" firstAttribute="top" secondItem="ZTP-ix-q66" secondAttribute="bottom" constant="30" id="rdO-UA-JJG"/>
                             <constraint firstItem="ZTP-ix-q66" firstAttribute="top" secondItem="bGC-Kp-yWN" secondAttribute="bottom" constant="30" id="z8r-Nx-Abc"/>
                         </constraints>
