@@ -79,19 +79,19 @@ class ViewController: UIViewController {
         
 //        view.addConstraints( NSLayoutConstraint.constraints(withVisualFormat: "V:|[label1(labelHeight@999)]-[label2(labelHeight)]-[label3(labelHeight)]-[label4(labelHeight)]-[label5(labelHeight)]->=10-|", options: [], metrics: metrics, views: viewsDictionary))
         
-        for label in [label1, label2, label3, label4, label5] {
-            label.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
-            label.trailingAnchor.constraint (equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
-            label.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.2).isActive = true
-            
-            if let previous = previous {
-                label.topAnchor.constraint(equalTo: previous.bottomAnchor, constant: 10).isActive = true
-            } else {
-                label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
-            }
-            
-            previous = label
-        }
+//        for label in [label1, label2, label3, label4, label5] {
+//            label.leadingAnchor.constraint(equalTo: view.safeAreaLayoutGuide.leadingAnchor, constant: 0).isActive = true
+//            label.trailingAnchor.constraint (equalTo: view.safeAreaLayoutGuide.trailingAnchor, constant: 0).isActive = true
+//            label.heightAnchor.constraint(equalTo: view.safeAreaLayoutGuide.heightAnchor, multiplier: 0.2).isActive = true
+//            
+//            if let previous = previous {
+//                label.topAnchor.constraint(equalTo: previous.bottomAnchor, constant: 10).isActive = true
+//            } else {
+//                label.topAnchor.constraint(equalTo: view.safeAreaLayoutGuide.topAnchor, constant: 0).isActive = true
+//            }
+//            
+//            previous = label
+//        }
 
         flag1.layer.borderWidth = 1
         flag2.layer.borderWidth = 1
@@ -118,6 +118,10 @@ class ViewController: UIViewController {
         flag2.setImage(UIImage(named: countries[1]), for: .normal)
         flag3.setImage(UIImage(named: countries[2]), for: .normal)
         
+        flag1.transform = .identity
+        flag2.transform = .identity
+        flag3.transform = .identity
+        
         correctFlag = Int.random(in: 0...2)
         
         title = "SCORE: \(score) - CHOOSE: \(countries[correctFlag].uppercased())"
@@ -131,6 +135,10 @@ class ViewController: UIViewController {
     
     @IBAction func touchFlag(_ sender: UIButton) {
         var title: String
+        
+        UIView.animate(withDuration: 1, delay: 0, usingSpringWithDamping: 0.5, initialSpringVelocity: 5, options: [], animations: {
+            sender.transform = CGAffineTransform(scaleX: 0.85, y: 0.85)
+        })
         
         if sender.tag == correctFlag {
             title = "Correct"
